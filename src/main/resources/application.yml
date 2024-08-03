@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+    include-message: always
+
+jwt:
+  secret: "ckRnKTHqr%aSci62"
+
+spring:
+  #   base de datos posta
+  datasource:
+    url: jdbc:postgresql://0.0.0.0:5432/airphm
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27117,127.0.0.1:27118/lodgings?authSource=admin
+      #      uri: mongodb://127.0.0.1:27117,127.0.0.1:27118/admin?authSource=admin&replicaSet=AirPHM
+
+  jpa:
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: passw0rd
+
+
+# Para activar el Trace
+logging:
+  level:
+    root: INFO
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+  packages-to-scan: unsam.phm.grupo1.controller
+  paths-to-match: /api/auth/**, /api/lodging/**, /api/booking/**, /api/user/**, /api/review/**, /api/user-friend/**

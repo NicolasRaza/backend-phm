@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "1c25d01c-99e0-4439-8429-946c0e6ea72c",
+		"name": "Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22598431"
+	},
+	"item": [
+		{
+			"name": "Rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"4 review\",\r\n    \"bookingId\": 4,\r\n    \"score\": 4,\r\n    \"publishedComment\": \"2023-04-18\",\r\n    \"lodgingId\": \"647a31b3f7e21e5ebd33b975\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/review/rate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"review",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reviewByUserId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/review/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"review",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reviewByLodgingId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Que lindo lugar\",\r\n    \"author\": \"tu Vieja\",\r\n    \"score\": 4,\r\n    \"publishedComment\": \"2023-04-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/review/lodging/647a31b3f7e21e5ebd33b975",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"review",
+						"lodging",
+						"647a31b3f7e21e5ebd33b975"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

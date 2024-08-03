@@ -1,0 +1,1 @@
+db.getCollection('lodging').find({ averageScore: { $gt: 4 } })

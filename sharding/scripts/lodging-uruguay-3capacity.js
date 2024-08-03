@@ -1,0 +1,1 @@
+db.getCollection("lodging").find({ "country": "Uruguay", "capacity": { $gte: 3 } })
